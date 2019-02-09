@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EditEntitiesListComponent } from './edit-entities-list.component';
-import { ENTITIES_PROVIDER } from '@core/entity-provider/entity-provider';
-import { EntitiesProviderStubService } from '@core/entities-provider-stub/entities-provider-stub.service';
+import { EntityListComponent } from './entity-list.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { FormsModule } from '@angular/forms';
 import {
   MatButtonModule,
   MatCardModule,
@@ -11,18 +11,18 @@ import {
   MatInputModule,
   MatListModule
 } from '@angular/material';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { RouterTestingModule } from '@angular/router/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ENTITIES_PROVIDER } from 'entity/entity-provider/entity-provider';
+import { EntitiesProviderStubService } from 'entity/../../common/services/entities-provider-stub.service';
 
-describe('EditEntitiesComponent', () => {
-  let component: EditEntitiesListComponent;
-  let fixture: ComponentFixture<EditEntitiesListComponent>;
+describe('MainComponent', () => {
+  let component: EntityListComponent;
+  let fixture: ComponentFixture<EntityListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EditEntitiesListComponent ],
+      declarations: [ EntityListComponent ],
       providers: [
         {provide: ENTITIES_PROVIDER, useClass: EntitiesProviderStubService}
       ],
@@ -43,7 +43,7 @@ describe('EditEntitiesComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EditEntitiesListComponent);
+    fixture = TestBed.createComponent(EntityListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

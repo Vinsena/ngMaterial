@@ -1,4 +1,4 @@
-export interface EntityModel {
+export interface EntityInterface {
   id: number;
   title: string;
   subtitle: string;

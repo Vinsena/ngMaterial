@@ -1,26 +1,25 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
-import {EditEntitiesListComponent} from '@core/edit-entities-list/edit-entities-list.component';
-import {MainComponent} from '@core/main/main.component';
+import { EntityListComponent } from '../entity/list/entity-list.component';
+import { EntityListEditorComponent } from '../entity/editor/entity-list-editor.component';
 
 const routes: Routes = [
   {
-    path: 'main',
-    component: MainComponent
+    path: '',
+    component: EntityListComponent
   },
   {
-    path: 'entities/:listId',
-    component: EditEntitiesListComponent
+    path: 'entity/:listId',
+    component: EntityListEditorComponent
   },
   {
     path: '**',
-    redirectTo: 'main'
+    redirectTo: ''
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [ RouterModule.forRoot(routes) ],
+  exports: [ RouterModule ]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

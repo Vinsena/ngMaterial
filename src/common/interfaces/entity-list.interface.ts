@@ -1,4 +1,4 @@
-export interface EntitiesListModel {
+export interface EntityListInterface {
   id: number;
   title: string;
   entities: number[];

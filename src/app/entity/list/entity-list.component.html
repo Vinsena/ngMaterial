@@ -1,0 +1,45 @@
+<section class="wrapper">
+  <mat-card
+    class="card"
+    *ngFor="let id of (entityListByID | mapKeys)"
+  >
+    <mat-card-header>
+      <div mat-card-avatar>
+        <button
+          mat-icon-button
+          class="add-btn"
+          (click)="open(id)"
+        >
+          <mat-icon aria-label="add">add</mat-icon>
+        </button>
+      </div>
+      <mat-card-title [ngClass]="{ 'dark-txt': !!entityListByID.get(id)?.entities.length }">
+        {{
+          !!entityListByID.get(id)?.entities.length
+            ? 'Entities connected (' + entityListByID.get(id)?.entities.length + ')'
+            : 'Connect entity'
+        }}
+      </mat-card-title>
+      <button
+        mat-icon-button
+        class="arrow-btn arrow-btn-down"
+        (click)="toggle(id)"
+        [ngClass]="{ 'arrow-btn-up' : showStatusByListID.get(id) }"
+        *ngIf="!!entityListByID.get(id)?.entities.length"
+      >
+        <mat-icon aria-label="add">expand_more</mat-icon>
+      </button>
+    </mat-card-header>
+    <mat-card-content
+      *ngIf="showStatusByListID.get(id)"
+      [@enterAnimation]
+    >
+      <mat-list>
+        <mat-list-item *ngFor="let eID of entityListByID.get(id)?.entities">
+          <p mat-line class="mat-subheading-2">{{ entityByID.get(eID)?.title }}</p>
+          <p mat-line class="mat-small"> {{ entityByID.get(eID)?.subtitle }} </p>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+</section>

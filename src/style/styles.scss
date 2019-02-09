@@ -1,13 +1,4 @@
-@import "./custom_material_theme.scss";
-@import "./reset.scss";
-@import "./variables.scss";
-
-html, body {
-  height: 100%;
-}
-
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-}
-
+@import "./material";
+@import "./reset";
+@import "./variables";
+@import "./common";

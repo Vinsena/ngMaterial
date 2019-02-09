@@ -1,0 +1,33 @@
+<section>
+  <p class="mat-subheading-2 light-txt">{{ title }}</p>
+  <p class="mat-headline txt">Add Entities</p>
+  <mat-card class="card">
+    <div class="search-container">
+      <mat-icon>search</mat-icon>
+      <mat-form-field appearance="legacy">
+        <mat-label>Search entity</mat-label>
+        <input
+          matInput
+          [(ngModel)]="searchQuery"
+          (input)="onInputHandler()"
+          autofocus
+        >
+      </mat-form-field>
+      <mat-icon>filter_list</mat-icon>
+    </div>
+    <mat-divider [inset]="true"></mat-divider>
+    <mat-selection-list>
+      <mat-list-option
+        *ngFor="let entity of foundEntities"
+       checkboxPosition="before"
+       [selected]="selectedEntityIds.includes(entity.id)"
+       (click)="onSwitchSelection(entity.id)"
+      >
+        <p class="mat-small txt">{{ entity.title }}</p>
+        <p class="mat-small light-txt">{{ entity.subtitle }}</p>
+        <mat-divider></mat-divider>
+      </mat-list-option>
+    </mat-selection-list>
+  </mat-card>
+  <button mat-raised-button class="success-btn" [color]="'primary'" (click)="save()">Connect</button>
+</section>

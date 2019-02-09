@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from '@routing/app-routing.module';
-import { CoreModule } from '@core/core.module';
+import { EntityModule } from './entity/entity.module';
 
 import { AppComponent } from './app.component';
 
@@ -15,11 +15,8 @@ import { AppComponent } from './app.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    CoreModule,
-
+    EntityModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [ AppComponent ]
 })
-export class AppModule {
-}
+export class AppModule {}
