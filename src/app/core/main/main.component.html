@@ -1,0 +1,28 @@
+<section class="wrapper">
+  <mat-card class="card" *ngFor="let list of lists">
+    <mat-card-header>
+      <div mat-card-avatar>
+        <button mat-icon-button class="add-btn" (click)="open(list.id)">
+          <mat-icon aria-label="add">add</mat-icon>
+        </button>
+      </div>
+      <mat-card-title [ngClass]="{'dark-txt': list.entities.length > 0}">
+        {{list.entities.length > 0
+        ? 'Entities conntected (' + list.entities.length + ')'
+        : 'Connect entity'}}
+      </mat-card-title>
+      <button mat-icon-button class="arrow-btn arrow-btn-down" (click)="list.show = !list.show"
+              [ngClass]="{'arrow-btn-up' : list.show}" *ngIf="list.entities.length > 0">
+        <mat-icon aria-label="add">expand_more</mat-icon>
+      </button>
+    </mat-card-header>
+    <mat-card-content *ngIf="list.show" [@enterAnimation]>
+      <mat-list>
+        <mat-list-item *ngFor="let entity of list.entities">
+          <p mat-line class="mat-subheading-2">{{entity.title}}</p>
+          <p mat-line class="mat-small"> {{entity.subtitle}} </p>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+</section>

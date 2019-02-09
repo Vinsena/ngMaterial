@@ -1,0 +1,90 @@
+@import "../../../style/variables.scss";
+
+.wrapper {
+
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .card {
+    width: 100%;
+    max-width: 400px;
+    margin: 4px;
+
+    mat-card-header {
+      justify-content: flex-start;
+      align-items: baseline;
+
+      mat-card-title {
+        color: $secondary-text-color;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0;
+      }
+
+      .dark-txt {
+        color: $primary-text-color;
+      }
+
+      .add-btn {
+        color: $accent-color;
+        background-color: $primary-color-light;
+      }
+
+      .arrow-btn {
+        margin-left: auto;
+        color: $accent-color;
+      }
+
+      .arrow-btn-down {
+        color: $accent-color;
+
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease;
+
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+
+      .arrow-btn-up {
+        -webkit-transform: rotate(-180deg);
+        -moz-transform: rotate(-180deg);
+        -o-transform: rotate(-180deg);
+        transform: rotate(-180deg);
+      }
+
+    }
+
+    mat-card-content {
+
+      mat-list-item {
+        -webkit-transition: all 1s ease;
+        -moz-transition: all 1s ease;
+        -o-transition: all 1s ease;
+        transition: all 1s ease;
+
+        .mat-subheading-2 {
+          color: $primary-text-color;
+        }
+
+        .mat-small {
+          color: $secondary-text-color;
+        }
+
+        .remove-btn {
+          background: $primary-color-dark;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+
+
