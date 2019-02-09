@@ -53,7 +53,7 @@ export class EntityListEditorComponent implements OnDestroy {
     this.entityService.getEntityListByID(this.listId).subscribe(
       (model: EntityListModel): void => {
         this.title = model.title;
-        this.selectedEntityIds = model.entities;
+        this.selectedEntityIds = [ ... model.entities ];
       },
       (reason: string): void => {
         // Todo: Show error?
