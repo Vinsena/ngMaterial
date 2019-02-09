@@ -1,21 +1,17 @@
-import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
+import { Component, Inject, OnDestroy} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ENTITIES_PROVIDER, IEntityProvider } from '@core/entity-provider/entity-provider';
 import { EntityModel } from '@core/models/entity.model';
 import { Subscription } from 'rxjs/index';
 
-
-interface EntityListItem {
-  entity: EntityModel;
-  selected: boolean;
-}
+import { ENTITIES_PROVIDER, IEntityProvider } from '@core/interfaces/entity-provider';
+import { EntityListItem } from '@core/entity-list-item';
 
 @Component({
-  selector: 'edit-entities-list',
+  selector: 'app-edit-entities-list',
   templateUrl: './edit-entities-list.component.html',
   styleUrls: ['./edit-entities-list.component.scss']
 })
-export class EditEntitiesListComponent implements OnInit, OnDestroy {
+export class EditEntitiesListComponent implements OnDestroy {
 
   listId: number;
   title: string;
@@ -33,11 +29,7 @@ export class EditEntitiesListComponent implements OnInit, OnDestroy {
               @Inject(ENTITIES_PROVIDER) private providerService: IEntityProvider) {
     this.foundEntities = [];
     this.selectedEntitiesIds = [];
-
-  }
-
-  ngOnInit(): void {
-    this.listId = Number.parseInt(this.activeRoute.snapshot.paramMap.get('listId'));
+    this.listId = Number.parseInt(this.activeRoute.snapshot.paramMap.get('listId'), 10);
     this.fillListData();
     this.search('');
   }

@@ -16,7 +16,7 @@
         <mat-icon aria-label="add">expand_more</mat-icon>
       </button>
     </mat-card-header>
-    <mat-card-content *ngIf="list.show" [@enterAnimation]>
+    <mat-card-content *ngIf="list.show">
       <mat-list>
         <mat-list-item *ngFor="let entity of list.entities">
           <p mat-line class="mat-subheading-2">{{entity.title}}</p>

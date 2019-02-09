@@ -13,8 +13,8 @@ import {
 } from '@angular/material';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ENTITIES_PROVIDER } from '@core/entity-provider/entity-provider';
-import { EntitiesProviderStubService } from '@core/entities-provider-stub/entities-provider-stub.service';
+import { ENTITIES_PROVIDER } from '@core/interfaces/entity-provider';
+import { EntitiesProviderStubService } from '@core/services/entities-provider-stub/entities-provider-stub.service';
 
 describe('MainComponent', () => {
   let component: MainComponent;

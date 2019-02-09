@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EditEntitiesListComponent } from './edit-entities-list.component';
-import { ENTITIES_PROVIDER } from '@core/entity-provider/entity-provider';
-import { EntitiesProviderStubService } from '@core/entities-provider-stub/entities-provider-stub.service';
+import { ENTITIES_PROVIDER } from '@core/interfaces/entity-provider';
+import { EntitiesProviderStubService } from '@core/services/entities-provider-stub/entities-provider-stub.service';
 import {
   MatButtonModule,
   MatCardModule,

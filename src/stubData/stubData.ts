@@ -1,4 +1,4 @@
-import { EntitiesListModel } from '@core/models/entitiesList.model';
+import { EntitiesListModel } from '@core/models/entities-list.model';
 import { EntityModel } from '@core/models/entity.model';
 
 export class StubData {
