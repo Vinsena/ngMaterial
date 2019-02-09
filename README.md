@@ -6,6 +6,8 @@ Test application for the company Eagle6 for the Angular front-end position.
 
 * Angular 7
 
+* AngularCLI
+
 * Angular Material
 
 * SCSS
@@ -16,7 +18,7 @@ Test application for the company Eagle6 for the Angular front-end position.
 
 ## Description
 
-* In this application there are two pages. The first one [/main] displays the list of lists (connections).
+* There are two pages. The first one [/main] displays the list of lists (connections).
 
 * This lists could be edited on the second page [/entities/:id].
 
