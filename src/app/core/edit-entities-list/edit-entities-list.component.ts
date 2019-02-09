@@ -1,6 +1,4 @@
-import { Component, Inject, Input, OnDestroy, OnInit } from '@angular/core';
-import { StubData } from '../../../stubData/stubData';
-import { EntitiesListModel } from '@core/models/entitiesList.model';
+import { Component, Inject, OnDestroy} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ENTITIES_PROVIDER, IEntityProvider } from '@core/entity-provider/entity-provider';
 import { EntityModel } from '@core/models/entity.model';
@@ -76,7 +74,6 @@ export class EditEntitiesListComponent implements OnDestroy {
     } else {
       this.selectedEntitiesIds.push(item.entity.id);
     }
-    console.log(this.selectedEntitiesIds);
   }
 
   onKeyUp() {

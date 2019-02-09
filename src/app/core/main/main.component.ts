@@ -1,11 +1,12 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
-import {EntitiesListModel} from '@core/models/entitiesList.model';
-import {StubData} from '../../../stubData/stubData';
-import {animate, style, transition, trigger} from '@angular/animations';
-import { EntityModel } from '@core/models/entity.model';
+import { Router } from '@angular/router';
+import { animate, style, transition, trigger } from '@angular/animations';
 import { ENTITIES_PROVIDER, IEntityProvider } from '@core/entity-provider/entity-provider';
 import { forkJoin, Observable } from 'rxjs/index';
+
+import { EntitiesListModel } from '@core/models/entitiesList.model';
+import { EntityModel } from '@core/models/entity.model';
+
 
 interface EntitiesListItem {
   id: number;
@@ -34,10 +35,7 @@ interface EntitiesListItem {
 })
 export class MainComponent {
 
-  isListShow: boolean;
-
   lists: EntitiesListItem[] = [];
-
 
   constructor(private router: Router, @Inject(ENTITIES_PROVIDER) private providerService: IEntityProvider) {
     forkJoin([

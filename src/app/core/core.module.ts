@@ -3,24 +3,26 @@ import { CommonModule } from '@angular/common';
 
 import { EditEntitiesListComponent } from './edit-entities-list/edit-entities-list.component';
 import { MainComponent } from './main/main.component';
+
 import { SharedModule } from '@shared/shared.module';
 import { FormsModule } from '@angular/forms';
+
 import { EntitiesProviderStubService } from '@core/entities-provider-stub/entities-provider-stub.service';
 import { ENTITIES_PROVIDER, IEntityProvider } from '@core/entity-provider/entity-provider';
 
 @NgModule({
   declarations: [
-    MainComponent,
-    EditEntitiesListComponent
+    EditEntitiesListComponent,
+    MainComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
-    SharedModule,
+    SharedModule
   ],
   exports: [
-    MainComponent,
-    EditEntitiesListComponent
+    EditEntitiesListComponent,
+    MainComponent
   ],
   providers: [
     {provide: ENTITIES_PROVIDER, useClass: EntitiesProviderStubService}
