@@ -4,9 +4,9 @@
   <mat-card class="card">
     <div class="search-container">
       <mat-icon>search</mat-icon>
-      <mat-form-field appearance="legacy" autofocus>
+      <mat-form-field appearance="legacy">
         <mat-label>Search entity</mat-label>
-        <input matInput [(ngModel)]="searchQuery" (keyup)="onKeyUp()" autofocus>
+        <input matInput [(ngModel)]="searchQuery" (input)="onKeyUp()" autofocus>
       </mat-form-field>
       <mat-icon>filter_list</mat-icon>
     </div>

@@ -6,8 +6,8 @@
       "@shared/*": [
         "src/app/shared/*"
       ],
-      "@core/*": [
-        "src/app/core/*"
+      "@entity/*": [
+        "src/app/entity/*"
       ],
       "@routing/*": [
         "src/app/routing/*"

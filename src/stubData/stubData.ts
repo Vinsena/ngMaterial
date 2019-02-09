@@ -1,5 +1,5 @@
-import { EntitiesListModel } from '@core/models/entities-list.model';
-import { EntityModel } from '@core/models/entity.model';
+import { EntitiesListModel } from '@entity/models/entities-list.model';
+import { EntityModel } from '@entity/models/entity.model';
 
 export class StubData {
 

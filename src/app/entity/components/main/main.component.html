@@ -11,16 +11,16 @@
         ? 'Entities conntected (' + list.entities.length + ')'
         : 'Connect entity'}}
       </mat-card-title>
-      <button mat-icon-button class="arrow-btn arrow-btn-down" (click)="list.show = !list.show"
-              [ngClass]="{'arrow-btn-up' : list.show}" *ngIf="list.entities.length > 0">
+      <button mat-icon-button class="arrow-btn arrow-btn-down" (click)="showStates[list.id] = !showStates[list.id]"
+              [ngClass]="{'arrow-btn-up' : showStates[list.id]}" *ngIf="list.entities.length > 0">
         <mat-icon aria-label="add">expand_more</mat-icon>
       </button>
     </mat-card-header>
-    <mat-card-content *ngIf="list.show">
+    <mat-card-content *ngIf="showStates[list.id]">
       <mat-list>
-        <mat-list-item *ngFor="let entity of list.entities">
-          <p mat-line class="mat-subheading-2">{{entity.title}}</p>
-          <p mat-line class="mat-small"> {{entity.subtitle}} </p>
+        <mat-list-item *ngFor="let entityId of list.entities">
+          <p mat-line class="mat-subheading-2">{{entities[entityId].title}}</p>
+          <p mat-line class="mat-small"> {{entities[entityId].subtitle}} </p>
         </mat-list-item>
       </mat-list>
     </mat-card-content>

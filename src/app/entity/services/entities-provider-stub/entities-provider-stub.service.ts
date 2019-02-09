@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/index';
 
-import { IEntityProvider } from '@core/interfaces/entity-provider';
-import { EntityModel } from '@core/models/entity.model';
+import { IEntityProvider } from '@entity/interfaces/entity-provider';
+import { EntityModel } from '@entity/models/entity.model';
 import { StubData } from '../../../../stubData/stubData';
-import { EntitiesListModel } from '@core/models/entities-list.model';
+import { EntitiesListModel } from '@entity/models/entities-list.model';
 
 @Injectable()
 export class EntitiesProviderStubService implements IEntityProvider {

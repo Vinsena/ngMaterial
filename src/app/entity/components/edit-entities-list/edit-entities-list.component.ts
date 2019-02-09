@@ -1,10 +1,10 @@
 import { Component, Inject, OnDestroy} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { EntityModel } from '@core/models/entity.model';
+import { EntityModel } from '@entity/models/entity.model';
 import { Subscription } from 'rxjs/index';
 
-import { ENTITIES_PROVIDER, IEntityProvider } from '@core/interfaces/entity-provider';
-import { EntityListItem } from '@core/entity-list-item';
+import { EntityListItem } from '@entity/entity-list-item';
+import { EntitiesProviderStubService } from '@entity/services/entities-provider-stub/entities-provider-stub.service';
 
 @Component({
   selector: 'app-edit-entities-list',
@@ -26,7 +26,7 @@ export class EditEntitiesListComponent implements OnDestroy {
 
   constructor(private router: Router,
               private activeRoute: ActivatedRoute,
-              @Inject(ENTITIES_PROVIDER) private providerService: IEntityProvider) {
+              private providerService: EntitiesProviderStubService) {
     this.foundEntities = [];
     this.selectedEntitiesIds = [];
     this.listId = Number.parseInt(this.activeRoute.snapshot.paramMap.get('listId'), 10);

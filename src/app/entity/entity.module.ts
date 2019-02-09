@@ -6,9 +6,7 @@ import { MainComponent } from './components/main/main.component';
 
 import { SharedModule } from '@shared/shared.module';
 import { FormsModule } from '@angular/forms';
-
-import { EntitiesProviderStubService } from '@core/services/entities-provider-stub/entities-provider-stub.service';
-import { ENTITIES_PROVIDER, IEntityProvider } from '@core/interfaces/entity-provider';
+import { EntitiesProviderStubService } from '@entity/services/entities-provider-stub/entities-provider-stub.service';
 
 @NgModule({
   declarations: [
@@ -25,8 +23,8 @@ import { ENTITIES_PROVIDER, IEntityProvider } from '@core/interfaces/entity-prov
     MainComponent
   ],
   providers: [
-    {provide: ENTITIES_PROVIDER, useClass: EntitiesProviderStubService}
+    EntitiesProviderStubService
   ]
 })
-export class CoreModule {
+export class EntityModule {
 }

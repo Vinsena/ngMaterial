@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import {EditEntitiesListComponent} from '@core/components/edit-entities-list/edit-entities-list.component';
-import {MainComponent} from '@core/components/main/main.component';
+import {EditEntitiesListComponent} from '@entity/components/edit-entities-list/edit-entities-list.component';
+import {MainComponent} from '@entity/components/main/main.component';
 
 const routes: Routes = [
   {

@@ -1,27 +1,19 @@
 # Eagle6TestApp
 
-Test application for the company Eagle6 for the Angular front-end position.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.0. and Angular Material
 
-## Build with
+## Development server
 
-* Angular 7
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-* AngularCLI
+## Code scaffolding
 
-* Angular Material
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-* SCSS
+## Build
 
-* HTML5
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-* rxJS
+## Running unit tests
 
-## Description
-
-* There are two pages. The first one `/main` displays the list of lists (connections).
-
-* This lists could be edited on the second page `/entities/:id`.
-
-* On the entities page there is search field for entities searching by title and subtitle fields.Selected items remain even they are hidden by search filter.
-
-* There is stub service which immulates asynchronous requests to data source using rxjs. It implements interface, that's why it could be easily replaced by real service.
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).

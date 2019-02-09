@@ -1,7 +1,9 @@
-import { EntityModel } from '@core/models/entity.model';
 import { Observable } from 'rxjs/index';
 import { InjectionToken } from '@angular/core';
-import { EntitiesListModel } from '@core/models/entities-list.model';
+
+import { EntityModel } from '@entity/models/entity.model';
+import { EntitiesListModel } from '@entity/models/entities-list.model';
+
 
 export let ENTITIES_PROVIDER = new InjectionToken<IEntityProvider>('entity.provider');
 
