@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { IEntityProvider } from '@core/entity-provider/entity-provider';
 import { Observable } from 'rxjs/index';
+
+import { IEntityProvider } from '@core/entity-provider/entity-provider';
 import { EntityModel } from '@core/models/entity.model';
 import { StubData } from '../../../stubData/stubData';
 import { EntitiesListModel } from '@core/models/entitiesList.model';
@@ -17,7 +18,9 @@ export class EntitiesProviderStubService implements IEntityProvider {
 
   search(query?: string): Observable<EntityModel[]> {
     return new Observable(subscriber => {
-      const found = StubData.entities.filter(item => this.isMatch(item.title, query));
+      const found = StubData.entities
+        .filter(item => this.isMatch(item.title, query) || this.isMatch(item.subtitle, query));
+
       setTimeout(() => {
         subscriber.next(found);
         subscriber.complete();

@@ -2,7 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { animate, style, transition, trigger } from '@angular/animations';
 import { ENTITIES_PROVIDER, IEntityProvider } from '@core/entity-provider/entity-provider';
-import { forkJoin, Observable } from 'rxjs/index';
+import { forkJoin } from 'rxjs/index';
 
 import { EntitiesListModel } from '@core/models/entitiesList.model';
 import { EntityModel } from '@core/models/entity.model';
@@ -33,16 +33,20 @@ interface EntitiesListItem {
     )
   ]
 })
-export class MainComponent {
+export class MainComponent implements OnInit {
 
-  lists: EntitiesListItem[] = [];
+  lists: EntitiesListItem[];
 
-  constructor(private router: Router, @Inject(ENTITIES_PROVIDER) private providerService: IEntityProvider) {
+  constructor(private router: Router,
+              @Inject(ENTITIES_PROVIDER) private providerService: IEntityProvider) {
+    this.lists = [];
+  }
+
+  ngOnInit(): void {
     forkJoin([
       this.providerService.getAllEntitiesLists(),
       this.providerService.search()
     ]).subscribe(res => {
-      console.log(res);
 
       const lists = res[0] as EntitiesListModel[];
       const entities = res[1] as EntityModel[];
@@ -57,7 +61,7 @@ export class MainComponent {
     });
   }
 
-  open(id: number) {
+  open(id: number): void {
     this.router.navigate([`/entities/${id}`]);
   }
 }
