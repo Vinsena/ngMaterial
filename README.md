@@ -4,8 +4,6 @@ Test application for the company Eagle6 for the Angular front-end position.
 
 ## Build with
 
-* This project was generated with 
-
 * Angular 7
 
 * Angular Material
