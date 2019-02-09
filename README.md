@@ -1,6 +1,6 @@
 # Eagle6TestApp
 
-Test application for the company Eagle6 for the front-end position.
+Test application for the company Eagle6 for the Angular front-end position.
 
 ## Build with
 
