@@ -71,7 +71,7 @@ export class EditEntitiesListComponent implements OnDestroy {
     }
   }
 
-  onKeyUp(): void {
+  onInput(): void {
     const queryString = this.searchQuery.trim();
     this.search(queryString);
   }
