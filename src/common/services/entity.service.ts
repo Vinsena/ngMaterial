@@ -48,7 +48,7 @@ export class EntityService {
   setConnectedEntities(id: number, entities: number[]): Observable<boolean> {
     return new Observable((observer: Observer<boolean>): void => {
       setTimeout(
-        () => {
+        (): void => {
           const list: EntityListModel | undefined = this.entityLists.find((item: EntityListModel): boolean => item.id === id);
 
           if (!!list) {

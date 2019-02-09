@@ -49,6 +49,32 @@ export class EntityListEditorComponent implements OnDestroy {
     this.activatedRouteSubscription.unsubscribe();
   }
 
+  onSwitchSelection(id: number): void {
+    const index: number = this.selectedEntityIds.indexOf(id);
+
+    if (index > -1) {
+      this.selectedEntityIds.splice(index, 1);
+    } else {
+      this.selectedEntityIds.push(id);
+    }
+  }
+
+  onInputHandler(): void {
+    this.search((this.searchQuery || '').trim());
+  }
+
+  save(): void {
+    this.entityService.setConnectedEntities(this.listId, this.selectedEntityIds).subscribe(
+      (): void => {
+        this.router.navigate([ '/main' ]);
+      },
+      (reason: string): void => {
+        // Todo: Show error?
+        console.error(reason);
+      }
+    );
+  }
+
   private fillListData(): void {
     this.entityService.getEntityListByID(this.listId).subscribe(
       (model: EntityListModel): void => {
@@ -88,24 +114,5 @@ export class EntityListEditorComponent implements OnDestroy {
         console.error(reason);
       }
     );
-  }
-
-  onSwitchSelection(id: number): void {
-    const index: number = this.selectedEntityIds.indexOf(id);
-
-    if (index > -1) {
-      this.selectedEntityIds.splice(index, 1);
-    } else {
-      this.selectedEntityIds.push(id);
-    }
-  }
-
-  onInputHandler(): void {
-    this.search((this.searchQuery || '').trim());
-  }
-
-  save(): void {
-    this.entityService.setConnectedEntities(this.listId, this.selectedEntityIds);
-    this.router.navigate([ '/main' ]);
   }
 }

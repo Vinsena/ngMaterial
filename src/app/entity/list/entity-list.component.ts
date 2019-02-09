@@ -31,7 +31,7 @@ export class EntityListComponent {
   entityByID: Map<number, EntityModel>;
   entityListByID: Map<number, EntityListModel>;
 
-  showStatusByListID: Map<number, boolean> = new Map<number, boolean>();
+  readonly showStatusByListID: Map<number, boolean> = new Map<number, boolean>();
 
   constructor(private readonly router: Router,
               private readonly entityService: EntityService) {
